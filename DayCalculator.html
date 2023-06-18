@@ -8,7 +8,7 @@
     <script src="./cdn's/bootstrap.min.js"></script>
     <script src="./cdn's/jquery.min.js"></script>
     <script src="./cdn's/popper.min.js"></script>
-    <title>Document</title>
+    <title>Day Calculator</title>
     <style>
         input{
             border: 0px;
@@ -29,10 +29,11 @@
   </head>
   <body class="container bg-danger font-weight-bolder text-light text-center">
     
-    <div class="pt-4 pb-4" style="background-color: forestgreen; border-radius: 25px; font-size: 30px; margin-top: 20%;">Day Calculator</div>
+    <div class="py-4 mt-4" style="background-color: forestgreen; border-radius: 25px; font-size: 30px;">Day Calculator</div>
 
-    <div class="bg-warning mt-4 p-5"
+    <div class="row bg-warning mt-4 p-5  d-flex justify-content-center"
     style="border-radius: 25px;">
+      <div class="col-2">
       <input
         type="number"
         id="dd"
@@ -41,6 +42,8 @@
         min="01"
         max="31"
       />
+      </div>
+      <div class="col-2">
       <input
         type="number"
         id="mm"
@@ -49,6 +52,8 @@
         min="01"
         max="12"
       />
+      </div>
+      <div class="col-4">
       <input
         type="number"
         id="yyyy"
@@ -56,7 +61,9 @@
         placeholder="Year"
         min="1000"
       />
-      <br />
+        </div>
+      </div>
+    <div class="row d-flex justify-content-center">
       <input
         type="button"
         id="calDay"
