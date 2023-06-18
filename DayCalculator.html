@@ -26,92 +26,59 @@
           -moz-appearance: textfield;
         }
     </style>
-  </head>
-  <body class="bg-danger font-weight-bolder text-light text-center">
-   <div class="container px-2">
-      <div class="row mt-4">
-        <div class="col-12 text-center" style="text-transform:uppercase; font-size:20px;">
-          Day Calculator
+</head>
+<body class="bg-danger font-weight-bolder text-light text-center">
+ <div class="container px-2">
+    <div class="row mt-4">
+      <div class="col-12 text-center" style="text-transform:uppercase; font-size:20px;">
+        Day Calculator
+      </div>
+    </div>
+    <div class="row my-3 d-flex justify-content-center mx-3" style="border-radius: 25px;">
+        <div class="col-lg-2 col-12 mt-lg-0 mt-2">
+          <input type="number" id="dd" class="text-center w-100" placeholder="Date" min="01" max="31"/>
         </div>
-      </div>
-    <div class="row bg-warning my-3 py-5 d-flex justify-content-center mx-3"
-    style="border-radius: 25px;">
-      <div class="col-lg-2 col-12 mt-lg-0 mt-2">
-      <input
-        type="number"
-        id="dd"
-        class="text-center w-100"
-        placeholder="Date"
-        min="01"
-        max="31"
-      />
-      </div>
-      <div class="col-lg-2 col-12 mt-lg-0 mt-2">
-      <input
-        type="number"
-        id="mm"
-        class="text-center w-100"
-        placeholder="Month"
-        min="01"
-        max="12"
-      />
-      </div>
-      <div class="col-lg-4 col-12 mt-lg-0 mt-2">
-      <input
-        type="number"
-        id="yyyy"
-        class="text-center w-100"
-        placeholder="Year"
-        min="1000"
-      />
+        <div class="col-lg-2 col-12 mt-lg-0 mt-2">
+          <input type="number" id="mm" class="text-center w-100" placeholder="Month" min="01" max="12"/>
         </div>
-      </div>
+        <div class="col-lg-2 col-12 mt-lg-0 mt-2">
+          <input type="number" id="yyyy" class="text-center w-100" placeholder="Year" min="1000"/>
+        </div>
+    </div>
     <div class="row d-flex justify-content-center">
       <div class="col-lg-3 col-6">
-        <input
-          type="button"
-          id="calDay"
-          class="btn bg-success font-weight-bold text-light mt-4 w-100"
-          value="Find Day"
-        />
+        <input type="button" id="calDay" class="btn bg-success font-weight-bold text-light mt-2 w-100" value="Find Day" />
       </div>
     </div>
-
-    <div
-      id="dayIS"
-      class="
-        bg-dark
-        font-weight-bold
-        text-light
-        my-4
-        p-2
-      "
-      style="border-radius: 25px;"
-    >
-      The day is:-
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-3 col-6">
+        <div id="dayIS" class="font-weight-bold text-light">
+          The day is:-
+        </div>
+      </div>
     </div>
-</div>
-    <script>
-      document.querySelector("#calDay").addEventListener("click", () => {
-        a = new Date();
-        date = document.getElementById("dd").value;
-        month = document.getElementById("mm").value;
-        year = document.getElementById("yyyy").value;
-        b = new Date(`${month} ${date} ${year}`);
-        day = [
-          "Sunday",
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ];
-        newDay = day[b.getDay()];
-        console.log(newDay);
-        document.getElementById("dayIS").innerText = `The day is:- ${newDay}`;
-      });
-    </script>
+  </div>
+  <script>
+    document.querySelector("#calDay").addEventListener("click", () => {
+      a = new Date();
+      date = document.getElementById("dd").value;
+      month = document.getElementById("mm").value;
+      year = document.getElementById("yyyy").value;
+      b = new Date(`${month} ${date} ${year}`);
+      day = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      newDay = day[b.getDay()];
+      console.log(newDay);
+      document.getElementById("dayIS").innerText = `The day is:- ${newDay}`;
+    });
+  </script>
 
 </body>
 </html>
