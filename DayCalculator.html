@@ -27,17 +27,17 @@
         }
     </style>
   </head>
-  <body class="container bg-danger font-weight-bolder text-light text-center">
+  <body class="bg-danger font-weight-bolder text-light text-center">
     
     <div class="py-4 mt-4" style="background-color: forestgreen; border-radius: 25px; font-size: 30px;">Day Calculator</div>
-
+    <div class="container">
     <div class="row bg-warning mt-4 p-5  d-flex justify-content-center"
     style="border-radius: 25px;">
       <div class="col-lg-2 col-3">
       <input
         type="number"
         id="dd"
-        class="text-center ml-2 pl-3 pr-3"
+        class="text-center px-3"
         placeholder="Date"
         min="01"
         max="31"
@@ -47,7 +47,7 @@
       <input
         type="number"
         id="mm"
-        class="text-center ml-2 pl-3 pr-3"
+        class="text-center px-3"
         placeholder="Month"
         min="01"
         max="12"
@@ -57,7 +57,7 @@
       <input
         type="number"
         id="yyyy"
-        class="text-center ml-2"
+        class="text-center"
         placeholder="Year"
         min="1000"
       />
@@ -85,7 +85,7 @@
     >
       The day is:-
     </div>
-
+</div>
     <script>
       document.querySelector("#calDay").addEventListener("click", () => {
         a = new Date();
