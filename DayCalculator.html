@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./cdn's/bootstrap.min.css" />
+    <script src="./cdn's/bootstrap.min.js"></script>
+    <script src="./cdn's/jquery.min.js"></script>
+    <script src="./cdn's/popper.min.js"></script>
+    <title>Document</title>
+    <style>
+        input{
+            border: 0px;
+            border-radius: 10px;
+            padding: 0.8%;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+    </style>
+  </head>
+  <body class="container bg-danger font-weight-bolder text-light text-center">
+    
+    <div class="pt-4 pb-4" style="background-color: forestgreen; border-radius: 25px; font-size: 30px; margin-top: 20%;">Day Calculator</div>
+
+    <div class="bg-warning mt-4 p-5"
+    style="border-radius: 25px;">
+      <input
+        type="number"
+        id="dd"
+        class="text-center ml-2 pl-3 pr-3"
+        placeholder="Date"
+        min="01"
+        max="31"
+      />
+      <input
+        type="number"
+        id="mm"
+        class="text-center ml-2 pl-3 pr-3"
+        placeholder="Month"
+        min="01"
+        max="12"
+      />
+      <input
+        type="number"
+        id="yyyy"
+        class="text-center ml-2"
+        placeholder="Year"
+        min="1000"
+      />
+      <br />
+      <input
+        type="button"
+        id="calDay"
+        class="btn bg-success font-weight-bold text-light ml-2 mt-4"
+        value="Find Day"
+      />
+    </div>
+
+    <div
+      id="dayIS"
+      class="
+        bg-dark
+        font-weight-bold
+        text-light
+        mt-4
+        p-4
+      "
+      style="border-radius: 25px;"
+    >
+      The day is:-
+    </div>
+
+    <script>
+      document.querySelector("#calDay").addEventListener("click", () => {
+        a = new Date();
+        date = document.getElementById("dd").value;
+        month = document.getElementById("mm").value;
+        year = document.getElementById("yyyy").value;
+        b = new Date(`${month} ${date} ${year}`);
+        day = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        newDay = day[b.getDay()];
+        console.log(newDay);
+        document.getElementById("dayIS").innerText = `The day is:- ${newDay}`;
+      });
+    </script>
+
+</body>
+</html>

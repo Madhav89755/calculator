@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="C:/Users/Madhav PC/Desktop/Day Calculator/cdn's/bootstrap.min.css" />
+    <script src="C:/Users/Madhav PC/Desktop/Day Calculator/cdn's/bootstrap.min.js"></script>
+    <script src="C:/Users/Madhav PC/Desktop/Day Calculator/cdn's/jquery.min.js"></script>
+    <script src="C:/Users/Madhav PC/Desktop/Day Calculator/cdn's/popper.min.js"></script>
+    
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="row container">
+      <input
+        type="number"
+        placeholder="mm"
+        class="container mt-5 ml-5 mb-1 p-2"
+        id="mon"
+      />
+      <input type="number" placeholder="yyyy" class="yr container ml-5 p-2" />
+      <input
+        type="button"
+        value="Calendar"
+        class="btn btn-success font-weight-bold m-4 pl-3 pr-3"
+        id="show"
+      />
+    </div>
+
+    <script>
+      function pokemon() {
+        console.log("its inside the function");
+        date = new Date();
+        let month='1'
+        let x = document.getElementById("mon").value;
+        month = "'"+x + 1+"'";
+
+        let originalMonth = `'${month - 1}'`;
+
+        let year = '2021';
+        let y = document.querySelector(".yr").value;
+        year = "'"+y+"'";
+        document.querySelector(".yr").innerHTML = year;
+
+        if (
+          month == 1 ||
+          month == 3 ||
+          month == 5 ||
+          month == 7 ||
+          month == 8 ||
+          month == 10 ||
+          month == 12
+        ) {
+          n = 31;
+        } else {
+          if (month == 2) {
+            year % 2 == 0 ? (n = 29) : (n = 28);
+          } else {
+            n = 30;
+          }
+        }
+
+        b = new Date(`${month} 1 ${year}`);
+        console.log(b);
+        days = b.getDay();
+        
+        document.write(`<table class="table">`);
+        document.write(`<tr>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                </tr>`);
+        document.write("<tr>");
+        k = 1;
+        numericDate = 1;
+        for (i = 0; numericDate <= n; i++) {
+          if (i >= days) {
+            document.write(`<td class="text-center">${numericDate}</td>`);
+            if (k % 7 == 0) {
+              document.write(`</tr><tr>`);
+            }
+            numericDate++;
+          } else {
+            document.write(`<td class="text-center">&#160;</td>`);
+          }
+          k++;
+        }
+        document.write("</tr>");
+        document.write("</table>");
+      }
+
+      document.getElementById("show").addEventListener("click", pokemon);
+    </script>
+  </body>
+</html>
